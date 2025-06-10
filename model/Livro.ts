@@ -1,6 +1,6 @@
-export class Livro {
+export abstract class Livro {
     
-    //* Todo livro dever ter: titulo, gênero, autor, editora, ano de publicação *//
+    //* Todo livro dever ter: título, gênero, autor, editora, ano de publicação *//
 
     //Atributos:
     private _titulo: string;

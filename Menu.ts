@@ -1,11 +1,13 @@
 import readlinesync = require ("readline-sync");
 import { colors } from "./util/Colors"; 
 import { Livro } from './model/Livro'
+import {Academico} from './model/Academico';
 
 
     // Colocar todos os tributos das classes: Livro
-    let titulo, genero, autor, editora, anoPublicacao, tipo;
+    let titulo, genero, autor, editora, anoPublicacao, tipo, materia;
     let sair: boolean = true;
+    let lista = new Array ();
 
 do {
 console.log (colors.fg.yellow);
@@ -17,10 +19,8 @@ _________________________________________________
 
     1 - Listar todos os livros disponíveis.
     2 - Cadastrar livro no sistema.
-    3 - Comprar livro.
-    4 - Consultar preço de algum livro.
-    5 - Retirar um livro.
-    6 - Sair.
+    3 - Pegar livro emprestado.
+    4 - Sair.
 _________________________________________________
 
     `);
@@ -30,55 +30,56 @@ console.log ("Selecione uma das opções: ");
 let opcao = readlinesync.questionInt ("");
 
 switch(opcao){
-
     case 1:
-console.log ("Lista de todos os livros disponíveis");
-break;
+        if (lista.length === 0){
+            console.log ("Não tem nenhum livro disponivel!");
+        } else {
+        
+        }
+    break;
+
 
     case 2:
-console.log (colors.fg.yellow,"\n\nCadastrar novo livro\n\n", colors.reset);
-
-titulo = readlinesync.question ("Digite o nome do livro: "); 
+console.log (colors.fg.yellow,"\n\nCadastrar novo livro\n\n", colors.reset); 
 
 console.log (`
-____________________________
+______________________________
+
     Informe o tipo do livro:
-____________________________
-    1 = Acadêmico  
-    2 = Literatura
+______________________________
+    1 = Livro acadêmico  
+    2 = Livro de literatura
     `);
 tipo = readlinesync.questionInt ("");
+titulo = readlinesync.question ("Digite o nome do livro: ");
 autor = readlinesync.question("Digite o nome do autor: ");
-genero = readlinesync.question("Informe o genero do livro: ");
 editora = readlinesync.question("Informe a editora: ");
-anoPublicacao = readlinesync.questionInt("Informe o ano de publicação: ");
+anoPublicacao = readlinesync.questionInt("Informe o ano de publicacao: ");
+genero = readlinesync.question("Informe o genero do livro: ");
+materia = readlinesync.question("Informe a matéria do livro: ");
 
-// Aqui eu estou colhendo as informações para criar a minha lista. 
-const novoLivro = new Livro(titulo, genero, autor, editora, anoPublicacao, tipo);
+const novoLivro = new Academico (titulo, autor, genero, editora, anoPublicacao, tipo, materia);
+lista.push(novoLivro);
+    break;
 
-novoLivro.visualizar();
-break;
 
     case 3:
 console.log ("Informe o nome do livro");
-break;
+    break;
+    
 
-    case 4:
-console.log ("Informe o nome do livro para consulta");
-break;
-
-    case 5:   
-break;
-     
-    case 6: 
+    case 4: 
     console.log ("O sistema foi encerrado com sucesso!");
-break;
+    sair = false;
+    break;
 
-default:
-console.log (colors.fg.redstrong , "Opção inválida!", colors.reset);
-sair = false;
-break;
+
+
+    default:
+    console.log (colors.fg.redstrong , "Opção inválida!", colors.reset);
+    break;
 
 }
 } while (sair === true)
+
 
