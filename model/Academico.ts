@@ -12,7 +12,7 @@ export class Academico extends Livro {
 
         super (titulo, autor, editora, anoPublicacao, tipo); // Aqui são os atributos já existentes da classe Livro
 
-        this._materia = materia; //Aqui estou incluindo um atributo, além dos já existentes
+        this._materia = materia; //Aqui estou incluindo um atributo, além dos já existentes 
     }
 
 
@@ -24,5 +24,22 @@ public set materia (materia: string){
     this._materia = materia;
 
 }
+
+  public visualizar(): void {
+      console.log (`
+
+-------------------------------------
+        Livro Acadêmico
+-------------------------------------
+ Título: ${this.titulo}
+ Autor: ${this.autor}
+ Editora: ${this.editora}
+ Ano: ${this.anoPublicacao}
+ materia do livro: ${this.materia} 
+-------------------------------------
+        `);
+
+// Nessa parte eu coloquei igual da classe literatura, mas trocando o gênero por matéria.
+  }
 
 }

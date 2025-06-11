@@ -71,40 +71,9 @@ export abstract class Livro {
         this._tipo = tipo;
     }
 
-// O comando public visualizar() serve para acessar em outra classe o conteúdo que esta dentro das chaves
-
-    public visualizar (): void {
-        
-        let tipoLivro: string = "";
-
-    switch (this._tipo){
-        case 1:
-            tipoLivro = "Literatura"
-            break;
-
-        case 2:
-            tipoLivro = "Acadêmico"
-            break;
-
-        default:
-            console.log ("Desconhecido!");
-            break;
-    }
-
-
-    console.log (`
-___________________________________________
-
-             Livro
-___________________________________________
-
-    título: ${this._titulo}
-    tipo do livro: ${tipoLivro}
-    Autor(a): ${this._autor}
-    Editora: ${this._editora}
-    Ano de Publicação: ${this._anoPublicacao}
-____________________________________________
-        `);
+    public abstract visualizar(): void; 
+    // função do "public abstract visualizar(): void" - Esse código serve para criar o metodo visualizar que vai ser passado para as classes Literatura e Academico.
+    // Esse método é abstrato, ou seja, ele só é declarado aqui.
+    // As classes filhas (Literatura e Acadêmico) serão obrigadas a criar a própria versão do método visualizar(), mostrando as informações completas de cada tipo de livro.
 
     }
-}

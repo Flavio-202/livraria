@@ -26,5 +26,21 @@ export class Literatura extends Livro {
         this._genero = genero;
     }
 
+    // Aqui é a implementação do metodo visualizar, vai ter outro também na classe Academico, mas com o atributo (materia)
+
+    public visualizar(): void {
+    console.log(`
+-------------------------------------
+        Livro de literatura
+-------------------------------------
+ Título: ${this.titulo}
+ Autor: ${this.autor}
+ Editora: ${this.editora}
+ Ano: ${this.anoPublicacao}
+ genero do livro: ${this.genero}
+-------------------------------------
+    `);
+  }
+
 }
 
