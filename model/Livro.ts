@@ -1,19 +1,22 @@
+
+// Essa é a minha classe principal, ela vai ser o molde para a classe Literatura e Academico
+// Todo livro dever ter: 
+// título, autor, editora, ano de publicação
+// genero (Literatura) e materia (Academico) 
+// tipo vai ser 1= Academico ou 2= Literatura
+
 export abstract class Livro {
-    
-    //* Todo livro dever ter: título, gênero, autor, editora, ano de publicação *//
 
     //Atributos:
     private _titulo: string;
-    private _genero: string;
     private _autor: string;
     private _editora: string;
     private _anoPublicacao: number;
     private _tipo: number;
 
-    constructor (titulo: string,genero: string, autor: string, editora: string, anoPublicacao: number, tipo:number){
+    constructor (titulo: string, autor: string, editora: string, anoPublicacao: number, tipo:number){
         
         this._titulo = titulo;
-        this._genero = genero;
         this._autor = autor;
         this._editora = editora;
         this._anoPublicacao = anoPublicacao;
@@ -27,16 +30,6 @@ export abstract class Livro {
 
     public set titulo (titulo: string) {
         this._titulo = titulo;
-    }
-
-
-// get e set: genero
-    public get genero (){
-        return this._genero;
-    }
-
-    public set genero (genero: string){
-        this._genero = genero;
     }
 
 
@@ -107,7 +100,6 @@ ___________________________________________
 
     título: ${this._titulo}
     tipo do livro: ${tipoLivro}
-    Gênero: ${this._genero}
     Autor(a): ${this._autor}
     Editora: ${this._editora}
     Ano de Publicação: ${this._anoPublicacao}
