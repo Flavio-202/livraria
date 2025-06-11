@@ -31,17 +31,17 @@ let opcao = readlinesync.questionInt ("");
 switch(opcao){
 
     case 1:
-        gerenciador.listarlivros();
+        gerenciador.listarlivros(); // Aqui estou puxando o método: public listarlivros(): void {}
     break;
 
 
     case 2:
-        gerenciador.cadastrarlivro();
+        gerenciador.cadastrarlivro(); // Aqui estou puxando o metodo: public cadastrarlivro(): void {} 
     break;
 
 
     case 3:
-        gerenciador.pegarlivro();
+        gerenciador.pegarlivro(); // Aqui estou puxando o método: public pegarlivro(): void {} 
     break;
 
 

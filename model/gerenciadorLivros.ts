@@ -39,7 +39,7 @@ export class gerenciadorLivros implements Funcoes {
         let editora = readlinesync.question("Editora: ").toLowerCase();
         let anoPublicacao = readlinesync.questionInt("Ano de publicaçao: ");
 
-        let novoLivro: Livro; // Nessa etapa eu estou atribuindo a variável novoLivro dentro da classe Livro.
+        let novoLivro: Livro; 
 
         if (tipo === 1) {
             let materia = readlinesync.question("Materia: ").toLowerCase();
@@ -80,10 +80,5 @@ export class gerenciadorLivros implements Funcoes {
     }
 
 
-
-    // MÉTODO DELETARLIVRO DA INTERFACE FUNCOES.
-    public deletarlivro(): void {
-        
-    }
 }
 
